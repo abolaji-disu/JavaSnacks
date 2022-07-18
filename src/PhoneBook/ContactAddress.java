@@ -73,6 +73,6 @@ public class ContactAddress {
 
     public static void main(String[] args) {
         ContactAddress contactAddress = new ContactAddress(null, null , 0, null);
-    contactAddress.createAddressField();
+        contactAddress.createAddressField();
     }
 }

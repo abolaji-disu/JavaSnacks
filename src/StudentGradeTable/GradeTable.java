@@ -9,7 +9,6 @@ public class GradeTable {
         private int subject1;
         private int subject2;
         private int subject3;
-
         private int total;
         private double average;
         private int position;
@@ -51,17 +50,17 @@ public class GradeTable {
 
 
 
-        public void GradeTable() {
+        public void gradeTable() {
             ArrayList<GradeTable> myStudents = new ArrayList<>();
             GradeTable students = new GradeTable("John", 10, 20, 30, 60, 30, 1);
             int subjectOneTotal = 0;
             int countPasses = 0;
             int countFailures = 0;
 
-
             String doubleLine = "===========================================================";
+            String enterGrades = "yes";
 
-            do{
+            while (Objects.equals(enterGrades, "yes")){
                 System.out.println();
                 System.out.print("Enter Student name: ");
                 String studentNames = userInput.nextLine();
@@ -105,13 +104,10 @@ public class GradeTable {
                 System.out.println(doubleLine);
                 System.out.println(doubleLine);
 
-                System.out.print("Keep entering grades? ");
+                System.out.print("Keep entering grades: ");
                 userInput.nextLine();
                 enterGrades = userInput.nextLine();
-
-//            System.out.println("Number of passes: " + ++countPasses);
-                //   }
-            } while (Objects.equals(enterGrades, "yes"));
+            };
 
             System.out.println("SUBJECT SUMMARY");
             System.out.println("SUBJECT 1");
@@ -133,11 +129,6 @@ public class GradeTable {
             System.out.println(subjectOneTotal);
 
 
-//        if(maxValue.subject1 > 50){
-//            countPasses +=1;
-//            System.out.println("Number of passes: " + ++countPasses);
-//        }
-
             if(maxValue.subject1 < 50){ System.out.print("Number of failures: " + ++countFailures);}
 
 
@@ -145,7 +136,7 @@ public class GradeTable {
 
         public static void main(String[] args) {
             GradeTable students = new GradeTable("John",10,20,30,60,30,1);
-            students.GradeTable();
+            students.gradeTable();
         }
     }
 
