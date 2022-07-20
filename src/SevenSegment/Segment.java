@@ -2,22 +2,126 @@ package SevenSegment;
 
 public class Segment {
 
+    private static final int[][] fillBoxes = new int[5][4];
 
+    static void fillBoxesA() {
+        fillBoxes[0][0] = 1;
+        fillBoxes[0][1] = 1;
+        fillBoxes[0][2] = 1;
+        fillBoxes[0][3] = 1;
+    }
 
-        static void turnOnSwitch(int a,int b,int c, int d, int e, int f, int g, int h,int i, int j, int k, int l, int m, int n, int o, int p){
+    static void fillBoxesB() {
+        fillBoxes[0][3] = 1;
+        fillBoxes[1][3] = 1;
+        fillBoxes[2][3] = 1;
+    }
 
-            int [] row1 = {a,b,c,d};
-            int [] row2 = {e,f};
-            int [] row3 = {g,h,i,j};
-            int [] row4 = {k,l};
-            int [] row5 = {m,n,o,p};
-        }
+    static void fillBoxesC() {
+        fillBoxes[2][3] = 1;
+        fillBoxes[3][3] = 1;
+        fillBoxes[4][3] = 1;
+    }
 
-        public static void main(String[] args) {
-            Segment.turnOnSwitch(1,0,1,1,0,1,0,1,1,1,1,1,1,1,1,1);
+    static void fillBoxesD() {
+        fillBoxes[4][0] = 1;
+        fillBoxes[4][1] = 1;
+        fillBoxes[4][2] = 1;
+        fillBoxes[4][3] = 1;
+    }
 
+    static void fillBoxesE() {
+        fillBoxes[2][0] = 1;
+        fillBoxes[3][0] = 1;
+        fillBoxes[4][0] = 1;
+    }
 
+    static void fillBoxesF() {
+        fillBoxes[0][0] = 1;
+        fillBoxes[1][0] = 1;
+        fillBoxes[2][0] = 1;
+    }
+
+    static void fillBoxesG() {
+        fillBoxes[2][0] = 1;
+        fillBoxes[2][1] = 1;
+        fillBoxes[2][2] = 1;
+        fillBoxes[2][3] = 1;
+    }
+
+    static void showBoxes() throws InterruptedException {
+        for (int[] rows : fillBoxes) {
+            for (int elements : rows) {
+                if (elements == 1) {
+                    System.out.print("* ");
+                } else {
+                    System.out.print("  ");
+                }
+                Thread.sleep(300);
+            }
+            System.out.println();
         }
     }
+
+    static void addElements(String value) throws IllegalAccessException, InterruptedException {
+
+        if (value.length() > 8){
+            value = value.substring(0,8);
+        }
+
+        char[] array = value.toCharArray();
+        for (char i : array){
+            if (!(i  == '1' || i == '0')){
+                throw new IllegalAccessException("Input must be 0 and 1");
+            }
+        }
+
+        for (int i = 0; i < value.length(); i++){
+            if (value.charAt(i) == '1'){
+                switch (i){
+                    case 0 -> fillBoxesA();
+                    case 1 -> fillBoxesB();
+                    case 2 -> fillBoxesC();
+                    case 3 -> fillBoxesD();
+                    case 4 -> fillBoxesE();
+                    case 5 -> fillBoxesF();
+                    case 6 -> fillBoxesG();
+
+                }
+            }
+        }
+    }
+
+    static void enterSwitch(int one, int two, int three, int four, int five, int six, int seven){
+        if (one == 1){
+            fillBoxesA();
+        }
+        if (two == 1){
+            fillBoxesB();
+        }
+        if (three == 1){
+            fillBoxesC();
+        }
+        if (four == 1){
+            fillBoxesD();
+
+        }
+        if (five == 1){
+            fillBoxesE();
+        }
+        if (six == 1){
+            fillBoxesF();
+        }
+        if (seven == 1){
+            fillBoxesG();
+        }
+
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        Segment.enterSwitch(1,0,1,1,1,1,1);
+        Segment.showBoxes();
+    }
+}
 
 
