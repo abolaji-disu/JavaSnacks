@@ -95,6 +95,11 @@ public class GradeTable {
 
                 myStudents.sort(Comparator.comparing(a -> -a.average));
 
+
+                if (gradesA < 50){ countFailures++;}
+                if (gradesA > 50){ countPasses++;}
+
+
                 int count = 1;
                 for (GradeTable tables : myStudents) {
                     tables.setPosition(count++);
@@ -128,8 +133,9 @@ public class GradeTable {
             System.out.print("Total score is: ");
             System.out.println(subjectOneTotal);
 
+            System.out.println("Number of Failures: " + countFailures);
+            System.out.println("Number of Passes: " + countPasses);
 
-            if(maxValue.subject1 < 50){ System.out.print("Number of failures: " + ++countFailures);}
 
 
         }
