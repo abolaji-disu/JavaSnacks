@@ -49,48 +49,6 @@ public class Segment {
         fillBoxes[2][3] = 1;
     }
 
-    static void showBoxes() throws InterruptedException {
-        for (int[] rows : fillBoxes) {
-            for (int elements : rows) {
-                if (elements == 1) {
-                    System.out.print("* ");
-                } else {
-                    System.out.print("  ");
-                }
-                Thread.sleep(300);
-            }
-            System.out.println();
-        }
-    }
-
-    static void addElements(String value) throws IllegalAccessException, InterruptedException {
-
-        if (value.length() > 8){
-            value = value.substring(0,8);
-        }
-
-        char[] array = value.toCharArray();
-        for (char i : array){
-            if (!(i  == '1' || i == '0')){
-                throw new IllegalAccessException("Input must be 0 and 1");
-            }
-        }
-
-        for (int i = 0; i < value.length(); i++){
-            if (value.charAt(i) == '1'){
-                switch (i){
-                    case 0 -> fillBoxesA();
-                    case 1 -> fillBoxesB();
-                    case 2 -> fillBoxesC();
-                    case 3 -> fillBoxesD();
-                    case 4 -> fillBoxesE();
-                    case 5 -> fillBoxesF();
-                    case 6 -> fillBoxesG();
-
-                }
-            }
-        }
-    }
 
     static void enterSwitch(int one, int two, int three, int four, int five, int six, int seven){
         if (one == 1){
@@ -118,8 +76,22 @@ public class Segment {
 
     }
 
+    static void showBoxes() throws InterruptedException {
+        for (int[] rows : fillBoxes) {
+            for (int elements : rows) {
+                if (elements == 1) {
+                    System.out.print("* ");
+                } else {
+                    System.out.print("  ");
+                }
+                Thread.sleep(300);
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) throws InterruptedException {
-        Segment.enterSwitch(1,0,1,1,1,1,1);
+        Segment.enterSwitch(1,1,1,1,0,0,1);
         Segment.showBoxes();
     }
 }
