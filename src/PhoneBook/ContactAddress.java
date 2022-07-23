@@ -1,6 +1,7 @@
 package PhoneBook;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -33,7 +34,7 @@ public class ContactAddress {
     public int getTelephone(){return telephone;}
     public String getEmail(){return  email;}
 
-    public void createAddressField(){
+    public void createAddressField() throws InputMismatchException {
 
         ArrayList<ContactAddress> addressBook = new ArrayList<>();
         ContactAddress contactAddress = new ContactAddress(null, null , 0, null);
@@ -73,6 +74,11 @@ public class ContactAddress {
 
     public static void main(String[] args) {
         ContactAddress contactAddress = new ContactAddress(null, null , 0, null);
-        contactAddress.createAddressField();
+        try {
+            contactAddress.createAddressField();
+        }catch (InputMismatchException ime){
+            ime.printStackTrace();
+            System.out.println("This field accepts only a number, Kindly enter your Phone number");
+        }
     }
 }
