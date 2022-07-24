@@ -68,7 +68,7 @@ public class GradeTable {
 
                 System.out.print("ENTER GRADES FOR SUBJECT 1: ");
                 int gradesA = userInput.nextInt();
-                students.setFirstSub(gradesA);
+//                students.setFirstSub(gradesA);
 
                 subjectOneTotal += gradesA;
 //            subjectOneAverage = subjectOneTotal
@@ -80,7 +80,7 @@ public class GradeTable {
 
                 System.out.print("ENTER GRADES FOR SUBJECT 3: ");
                 int gradesC = userInput.nextInt();
-                students.setThirdSub(gradesC);
+//                students.setThirdSub(gradesC);
 
                 int totalGrades = gradesA + gradesB + gradesC;
                 int averages = totalGrades / 3;
