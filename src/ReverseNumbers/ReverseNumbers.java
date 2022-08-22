@@ -23,10 +23,20 @@ public class ReverseNumbers {
         return numArr;
     }
 
+    public static char[] returnNumbersAA(String nums) {
+        char[] numArr = new char[nums.length()];
+        for (int i = nums.length() - 1, j = 0; i >= 0; i--, j++) {
+            numArr[j] = nums.charAt(i);
+        }
+        return numArr;
+    }
+
 
     public static void main(String[] args) {
-        int nums = 34567801;
+        int nums = 500002000;
+        String numsAA = "500002000";
         System.out.println(returnNumbers(nums));
+        System.out.println(returnNumbersAA(numsAA));
     }
 }
 
