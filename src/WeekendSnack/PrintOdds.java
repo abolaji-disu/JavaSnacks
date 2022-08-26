@@ -9,11 +9,4 @@ public class PrintOdds {
         return 0;
 
     }
-
-    public static void main(String[] args) {
-        int[] nums = {2,5};
-        printOddElementPosition(nums);
-
-
-    }
 }
