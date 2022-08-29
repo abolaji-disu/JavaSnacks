@@ -37,19 +37,18 @@ public class ArrayConcatenate {
     public static String[] joinArray(int[] arr1, String[] arr2){
         var collectElem = "";
 
-        for (int i = 0; i < arr1.length; i++) {
+        for (int i = 0; i < arr1.length; i++)
             collectElem += arr1[i];
-        }
-        for (int i = 0; i < arr2.length; i++) {
+
+        for (int i = 0; i < arr2.length; i++)
             collectElem += arr2[i];
-        }
+
 
         String[] collectArr = new String [collectElem.length()];
 
-        for (int i = 0; i < collectArr.length ; i++) {
+        for (int i = 0; i < collectArr.length ; i++)
             collectArr[i] = String.valueOf(collectElem.charAt(i));
 
-        }
         return collectArr;
     }
 

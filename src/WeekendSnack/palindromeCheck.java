@@ -11,7 +11,7 @@ public class palindromeCheck {
     }
 
     public static void main(String[] args) {
-        String str = "dad";
+        String str = "madam";
         System.out.println(checkPalindrome(str));
     }
 }
