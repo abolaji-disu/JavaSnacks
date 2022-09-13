@@ -1,5 +1,5 @@
 package SeptemberLeaveSnack.TicTacToe;
 
 public enum PlayerMarks {
-    X,O
+    X,O,EMPTY
 }

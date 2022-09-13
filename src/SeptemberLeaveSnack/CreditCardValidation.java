@@ -1,8 +1,5 @@
 package SeptemberLeaveSnack;
 
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class CreditCardValidation {
 
     public static boolean isValid(String number){
@@ -23,15 +20,10 @@ public class CreditCardValidation {
         int calculatedSingleDigits;
 
         //saving input from the back
-        for (int i = numSplit.length-2, j = 0; j < numSplit.length; i--, j++) {
-            if (i % 2 == 0) numberStringArr[j] = numSplit[i];
-            if(numberStringArr[j] == null) numberStringArr[j] = "0";
-        }
+        saveArrayReverse(numSplit, numberStringArr);
 
         //converting each number to integer
-        for (int i = 0; i < numberStringArr.length; i++) {
-            numberIntArr[i] = Integer.parseInt(numberStringArr[i]);
-        }
+        convertArrayElementToInteger(numberStringArr, numberIntArr);
 
         // double the values
         for (int i = 0; i < numberIntArr.length; i++){
@@ -40,7 +32,7 @@ public class CreditCardValidation {
 
         // collect for double digits
         for (int i = 0; i < numberIntArr.length; i++) {
-            if (countDigit(numberIntArr[i]) > 1){
+            if (getDigits(numberIntArr[i]) > 1){
                 saveDoubleDigits[i] = numberIntArr[i];
                 numberIntArr[i] = 0;
             }
@@ -52,14 +44,26 @@ public class CreditCardValidation {
         return calculatedDoubleDigits + calculatedSingleDigits;
 
     }
+
+    private static void convertArrayElementToInteger(String[] numberStringArr, int[] numberIntArr) {
+        for (int i = 0; i < numberStringArr.length; i++) {
+            numberIntArr[i] = Integer.parseInt(numberStringArr[i]);
+        }
+    }
+
+    private static void saveArrayReverse(String[] numSplit, String[] numberStringArr) {
+        for (int i = numSplit.length-2, j = 0; j < numSplit.length; i--, j++) {
+            if (i % 2 == 0) numberStringArr[j] = numSplit[i];
+            if(numberStringArr[j] == null) numberStringArr[j] = "0";
+        }
+    }
+
     public static int sumOffOddPlaces(String num){
         String[] splitNum = num.split("");
         int[] splitNumInt  = new int[num.length()];
         int calculateOddsNum = 0;
 
-        for (int i = 0; i < splitNum.length; i++){
-            splitNumInt[i] = Integer.parseInt(splitNum[i]);
-        }
+        convertArrayElementToInteger(splitNum, splitNumInt);
 
         for (int i = 0; i < splitNumInt.length; i++){
             if (i % 2 == 1) calculateOddsNum += splitNumInt[i];
@@ -94,7 +98,7 @@ public class CreditCardValidation {
         }
         return addSingleDigits;
     }
-    public static int countDigit(int num){
+    public static int getDigits(int num){
         int count = 0;
         while (num != 0){
             num = num / 10;
@@ -107,8 +111,8 @@ public class CreditCardValidation {
         String validCardNumber = "4388576018410707";
         String invalidCardNumber = "4388576018402626";
         String myVisaCard = "4187452016471567";
-        System.out.printf("Sum of card in Odd Places is %d%n",sumOfDoubleEvenPlace(validCardNumber));
-        System.out.printf("Sum of card numbers in odd places is %d%n", sumOffOddPlaces(validCardNumber));
-        System.out.printf("Your card status is %b",isValid(validCardNumber));
+        System.out.printf("Sum of card in Odd Places is %d%n",sumOfDoubleEvenPlace(myVisaCard));
+        System.out.printf("Sum of card numbers in odd places is %d%n", sumOffOddPlaces(myVisaCard));
+        System.out.printf("Your card status is %b",isValid(myVisaCard));
     }
 }

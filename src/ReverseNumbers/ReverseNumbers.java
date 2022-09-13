@@ -33,9 +33,9 @@ public class ReverseNumbers {
 
 
     public static void main(String[] args) {
-        int nums = 500002000;
-        String numsAA = "500002000";
-        System.out.println(returnNumbers(nums));
+//        int nums = 500002000;
+        String numsAA = "Helloworld";
+//        System.out.println(returnNumbers(nums));
         System.out.println(returnNumbersAA(numsAA));
     }
 }
