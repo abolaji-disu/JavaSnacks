@@ -24,30 +24,6 @@ public class UniqueArray {
 
             }
         }
-
-
-//        for (int i = 0; i < storeSet.length; i++) {
-////            if (storeSet[i] == 0){
-////                int newRand  = 1 + rand.nextInt(numberRange);
-////                int newRandModified = newRand + (i + 1);
-////                storeSet[i] = newRandModified;
-////            }
-//            int newRand  = 1 + rand.nextInt(numberRange);
-//            while(storeSet[i] == newRand){
-//                newRand = 1 + rand.nextInt(numberRange);
-//                if(storeSet[i] == 0){
-//                    storeSet[i] = newRand;
-//                }
-//            }
-//
-//        }
-
-
-//        for (int i = 0; i < storeSet.length; i++) {
-//            if(storeSet[i] == 0){
-//                storeSet[i] = 1 + rand.nextInt(numberRange) + 5;
-//            }
-//        }
         return storeSet;
     }
 
@@ -63,21 +39,5 @@ public class UniqueArray {
 //        System.out.println(Arrays.toString(generateUniqueSet(5)));
 //        System.out.println(Arrays.toString(generateUniqueSet(5)));
 //        System.out.println(Arrays.toString(generateUniqueSet(5)));
-//        int newRand;
-//        Random rand   = new Random();
-//        int[] storeSet = new int[10];
-//        int count;
-//
-//
-//        for (int i = 0; i < storeSet.length; i++){
-//            newRand = 1 + rand.nextInt(10);
-//            storeSet[i] = newRand;
-//        }
-//
-//        for (int i = 0; i < storeSet.length; i++) {
-//            if(storeSet[i] )
-//        }
-//
-//        System.out.println(Arrays.toString(storeSet));
     }
 }
