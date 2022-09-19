@@ -14,7 +14,7 @@ public class TicTacToeReferee {
     public boolean checkWinInSecondRow() {
         boolean firstRowO = board[1][0] == PlayerMark.O && board[1][1] == PlayerMark.O && board[1][2] == PlayerMark.O;
         boolean firstRowX = board[1][0] == PlayerMark.X && board[1][1] == PlayerMark.X && board[1][2] == PlayerMark.X;
-        if (firstRowX) System.out.print("Player X Wins");
+        if (firstRowX) System.out.println("Player X Wins");
         if (firstRowO) System.out.print("Player O Wins");
         return firstRowX || firstRowO;
     }

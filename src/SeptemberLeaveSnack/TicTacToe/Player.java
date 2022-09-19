@@ -117,6 +117,11 @@ public class Player {
 
     }
 
+//    public boolean checkGameForTies(){
+//
+//        if (!checkWinner() && )
+//    }
+
 
 
 

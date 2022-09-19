@@ -112,6 +112,65 @@ public class TicTacToeTest {
         assertTrue(player.checkWinner());
     }
 
+    @Test
+    void testThatPlayerCanWinInColumnOne(){
+        player.setPlayerPosition(1);
+        player.setPlayerPosition(2);
+        player.setPlayerPosition(4);
+        player.setPlayerPosition(5);
+        player.setPlayerPosition(7);
+        GameBoard.displayBoard();
+        assertTrue(player.checkWinner());
+    }
+
+    @Test
+    void testThatPlayerCanWinInColumnTwo(){
+        player.setPlayerPosition(1);
+        player.setPlayerPosition(2);
+        player.setPlayerPosition(4);
+        player.setPlayerPosition(5);
+        player.setPlayerPosition(3);
+        player.setPlayerPosition(8);
+        GameBoard.displayBoard();
+        assertTrue(player.checkWinner());
+    }
+
+    @Test
+    void testThatPlayerCanWinInColumnThree(){
+        player.setPlayerPosition(3);
+        player.setPlayerPosition(1);
+        player.setPlayerPosition(6);
+        player.setPlayerPosition(2);
+        player.setPlayerPosition(9);
+        GameBoard.displayBoard();
+        assertTrue(player.checkWinner());
+    }
+
+    @Test
+    void testThatPlayerCanWinDiagonallyFromColumnOne(){
+        player.setPlayerPosition(1);
+        player.setPlayerPosition(2);
+        player.setPlayerPosition(5);
+        player.setPlayerPosition(3);
+        player.setPlayerPosition(9);
+        GameBoard.displayBoard();
+        assertTrue(player.checkWinner());
+    }
+
+    @Test
+    void testThatPlayerCanWinInDiagonallyFromColumnThree(){
+        player.setPlayerPosition(1);
+        player.setPlayerPosition(3);
+        player.setPlayerPosition(2);
+        player.setPlayerPosition(5);
+        player.setPlayerPosition(8);
+        player.setPlayerPosition(7);
+        GameBoard.displayBoard();
+        assertTrue(player.checkWinner());
+    }
+
+
+
 
 
 
