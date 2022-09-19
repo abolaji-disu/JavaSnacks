@@ -28,11 +28,12 @@ public class UniqueArray {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(generateUniqueSet(5)));
-        System.out.println(Arrays.toString(generateUniqueSet(10)));
-        System.out.println(Arrays.toString(generateUniqueSet(15)));
-        System.out.println(Arrays.toString(generateUniqueSet(20)));
-        System.out.println(Arrays.toString(generateUniqueSet(25)));
+//        System.out.println(Arrays.toString(generateUniqueSet(5)));
+//        System.out.println(Arrays.toString(generateUniqueSet(10)));
+//        System.out.println(Arrays.toString(generateUniqueSet(15)));
+//        System.out.println(Arrays.toString(generateUniqueSet(20)));
+//        System.out.println(Arrays.toString(generateUniqueSet(25)));
+        System.out.println(Arrays.toString(generateUniqueSet(9)));
 
 //        System.out.println(Arrays.toString(generateUniqueSet(5)));
 //        System.out.println(Arrays.toString(generateUniqueSet(5)));

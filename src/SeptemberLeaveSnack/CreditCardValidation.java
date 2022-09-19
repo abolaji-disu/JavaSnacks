@@ -91,6 +91,7 @@ public class CreditCardValidation {
 
         return addDoubleDigits;
     }
+
     public static int addSingleDigits(int[] num){
         int addSingleDigits = 0;
         for(int i = 0; i < num.length; i++){
@@ -98,6 +99,7 @@ public class CreditCardValidation {
         }
         return addSingleDigits;
     }
+
     public static int getDigits(int num){
         int count = 0;
         while (num != 0){
