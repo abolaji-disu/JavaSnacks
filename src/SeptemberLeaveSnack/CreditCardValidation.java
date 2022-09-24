@@ -112,7 +112,7 @@ public class CreditCardValidation {
     public static void main(String[] args){
         String validCardNumber = "4388576018410707";
         String invalidCardNumber = "4388576018402626";
-        String myVisaCard = "4187452016471567";
+        String myVisaCard = "4105400018034650";
         System.out.printf("Sum of card in Odd Places is %d%n",sumOfDoubleEvenPlace(myVisaCard));
         System.out.printf("Sum of card numbers in odd places is %d%n", sumOffOddPlaces(myVisaCard));
         System.out.printf("Your card status is %b",isValid(myVisaCard));

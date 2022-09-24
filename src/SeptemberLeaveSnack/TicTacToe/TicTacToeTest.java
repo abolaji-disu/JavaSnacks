@@ -169,11 +169,18 @@ public class TicTacToeTest {
         assertTrue(player.checkWinner());
     }
 
-
-
-
-
-
-
-
+    @Test
+    void testThatGameCanEndInATie(){
+        player.setPlayerPosition(1);
+        player.setPlayerPosition(2);
+        player.setPlayerPosition(3);
+        player.setPlayerPosition(5);
+        player.setPlayerPosition(8);
+        player.setPlayerPosition(4);
+        player.setPlayerPosition(6);
+        player.setPlayerPosition(9);
+        player.setPlayerPosition(7);
+        GameBoard.displayBoard();
+        assertTrue(player.checkWinner());
+    }
 }

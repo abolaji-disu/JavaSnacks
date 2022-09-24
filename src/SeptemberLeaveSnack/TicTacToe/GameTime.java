@@ -11,16 +11,15 @@ public class GameTime {
     Scanner userInput = new Scanner(System.in);
 
     public int inputCell (int play){
-        try {
-            play = userInput.nextInt();
-        } catch (InputMismatchException e){
-            System.out.println(e.getMessage());
-        }
+        play = userInput.nextInt();
         return play;
     }
 
     public boolean decideWinner(){
     return player.checkWinner();
+    }
+    public boolean isATie(){
+        return player.checkTie();
     }
 
     public void playGame(int play){
@@ -45,45 +44,12 @@ public class GameTime {
             try {
                 gameTime.playGame(gameTime.inputCell(play));
                 displayResult();
-            } catch (IllegalValueException | IllegalEntryException | InputMismatchException e){
+            } catch (IllegalValueException | IllegalEntryException e){
                 System.out.println(e.getMessage());
             }
+            if (!gameTime.decideWinner()) System.out.println("Game is a tie");
             gameTime.decideWinner();
         }
-
-
-
-//        Player player = new Player();
-//        Scanner userInput = new Scanner(System.in);
-//
-//        String keepPlaying = "y";
-//
-//        while(keepPlaying.equals("y")){
-//
-//            System.out.println("Player One Playing::: choose a cell");
-//            System.out.println();
-//            int play = 0;
-//
-//            try {
-//                 play = userInput.nextInt();
-//            }catch (InputMismatchException e){
-//                System.out.println(e.getMessage());
-//            }
-//
-//            try {
-//                player.checkPlayerTurns(play);
-//            } catch (IllegalValueException | IllegalEntryException e){
-//                System.out.println(e.getMessage());
-//            }
-//
-//            GameBoard.displayBoard();
-//
-//            Scanner checkUser = new Scanner(System.in);
-//
-//            System.out.println();
-//            System.out.println("Keep Playing");
-//            keepPlaying = checkUser.nextLine();
-//        }
 
 
     }

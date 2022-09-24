@@ -3,6 +3,8 @@ package SeptemberLeaveSnack.TicTacToe;
 import SeptemberLeaveSnack.TicTacToe.ErrorModule.IllegalEntryException;
 import SeptemberLeaveSnack.TicTacToe.ErrorModule.IllegalValueException;
 
+import static SeptemberLeaveSnack.TicTacToe.GameBoard.board;
+
 public class Player {
 //    private final GameBoard gameBoard = new GameBoard();
     TicTacToeReferee refree = new TicTacToeReferee();
@@ -111,15 +113,27 @@ public class Player {
         if (refree.checkWinInThirdColum()) return true;
 
         if (refree.checkWinInFirstDiagonal()) return true;
-        if (refree.checkWinInSecondDiagonal()) return true;
-
-    return false;
-
+        return refree.checkWinInSecondDiagonal();
     }
 
-//    public boolean checkGameForTies(){
-//
-//        if (!checkWinner() && )
+    public boolean isATie(){
+        for (int row = 0; row < board.length; row++) {
+            for (int col = 0; col < board[row].length; col++) {
+                if (board[row][col] == PlayerMark.E ) {
+//                    System.out.println("Game is a tie");
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
+    public boolean checkTie(){
+        return !checkWinner() && !isATie();
+    }
+//    public boolean checkTie(){
+//        return !checkWinner() || refree.checkTie();
 //    }
 
 
