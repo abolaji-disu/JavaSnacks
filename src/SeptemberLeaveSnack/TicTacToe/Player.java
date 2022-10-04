@@ -3,11 +3,9 @@ package SeptemberLeaveSnack.TicTacToe;
 import SeptemberLeaveSnack.TicTacToe.ErrorModule.IllegalEntryException;
 import SeptemberLeaveSnack.TicTacToe.ErrorModule.IllegalValueException;
 
-import static SeptemberLeaveSnack.TicTacToe.GameBoard.board;
-
 public class Player {
 //    private final GameBoard gameBoard = new GameBoard();
-    TicTacToeReferee refree = new TicTacToeReferee();
+    TicTacToeReferee referee = new TicTacToeReferee();
 
     private int stateCounter = 1;
     GameBoard gameBoard = new GameBoard();
@@ -104,77 +102,20 @@ public class Player {
     }
 
     public boolean checkWinner() {
-        if (refree.checkWinInFirstRow()) return true;
-        if (refree.checkWinInSecondRow()) return true;
-        if (refree.checkWinInThirdRow()) return true;
+        if (referee.checkWinInFirstRow()) return true;
+        if (referee.checkWinInSecondRow()) return true;
+        if (referee.checkWinInThirdRow()) return true;
 
-        if (refree.checkWinInFirstColumn())return true;
-        if (refree.checkWinInSecondColumn()) return true;
-        if (refree.checkWinInThirdColum()) return true;
+        if (referee.checkWinInFirstColumn())return true;
+        if (referee.checkWinInSecondColumn()) return true;
+        if (referee.checkWinInThirdColum()) return true;
 
-        if (refree.checkWinInFirstDiagonal()) return true;
-        return refree.checkWinInSecondDiagonal();
+        if (referee.checkWinInFirstDiagonal()) return true;
+        if (referee.checkWinInSecondDiagonal()) return true;
+        return referee.checkTie();
     }
-
-    public boolean isATie(){
-        for (int row = 0; row < board.length; row++) {
-            for (int col = 0; col < board[row].length; col++) {
-                if (board[row][col] == PlayerMark.E ) {
-//                    System.out.println("Game is a tie");
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-
-    public boolean checkTie(){
-        return !checkWinner() && !isATie();
-    }
-//    public boolean checkTie(){
-//        return !checkWinner() || refree.checkTie();
-//    }
-
-
 
 
 }
-
-
-//    public boolean checkWinInFirstRow() {
-//        PlayerMark[] rowOneCheck = {board[0][0], board[0][1], board[0][2]};
-//        int countX = 0, countO = 0;
-//        for (PlayerMark playerMark : rowOneCheck) {
-//            if (playerMark == PlayerMark.O) countO++;
-//            if (playerMark == PlayerMark.X) countX++;
-//        }
-//        if (countX == 3) System.out.print("Player X  Wins");
-//        if (countO == 3) System.out.print("Player O  Wins");
-//        return countO == 3 || countX == 3;
-//    }
-//}
-//
-//// check winner loop method...will be done later...
-////    public boolean checkWinner(GameBoard gameBoard) {
-////        var board = gameBoard.getBoard();
-////        int[][] winningCell = { {0,1,2}, {3,4,5}, {6,7,8}, {0,3,6}, {1,4,7}, {2,5,8}, {0,4,8}, {2,4,6}};
-////
-////        int countX = 0;
-////        int countY = 0;
-////
-////        for(int a = 0; a <= 2; a++) {
-////            for (int i = 0; i <= a; ) {
-////                for (int j = 0; j < board[i].length; j++) {
-////                    if (board[i][j] == PlayerMark.X) countX++;
-////                    if (board[i][j] == PlayerMark.O) countY++;
-////                    if (countX == 3 || countY == 3) return true;
-////                    i++;
-////                }
-////            }
-////        }
-////        return false;
-//
-////    }
 
 

@@ -18,9 +18,9 @@ public class GameTime {
     public boolean decideWinner(){
     return player.checkWinner();
     }
-    public boolean isATie(){
-        return player.checkTie();
-    }
+//    public boolean isATie(){
+//        return player.checkTie();
+//    }
 
     public void playGame(int play){
         player.checkPlayerTurns(play);
@@ -38,6 +38,7 @@ public class GameTime {
 
         System.out.println("Choose a cell");
         System.out.println("Player One Playing");
+//        gameTime.playGame(gameTime.inputCell(play));
 
 
         while(!gameTime.decideWinner()){
@@ -47,7 +48,7 @@ public class GameTime {
             } catch (IllegalValueException | IllegalEntryException e){
                 System.out.println(e.getMessage());
             }
-            if (!gameTime.decideWinner()) System.out.println("Game is a tie");
+            // if (!gameTime.decideWinner()) System.out.println("Game is a tie");
             gameTime.decideWinner();
         }
 

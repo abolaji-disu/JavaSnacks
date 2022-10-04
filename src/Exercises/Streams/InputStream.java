@@ -1,7 +1,6 @@
 package Exercises.Streams;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class InputStream {
@@ -19,16 +18,19 @@ public class InputStream {
 //        } catch (IOException e) {
 //            System.out.println(e);
 //        }
+
+
         // -1 means end of input
 
             try {
-                FileInputStream input = new FileInputStream("C:\\Users\\user\\IdeaProjects\\SnacksSpice\\src\\Exercises\\Streams\\newfile.txt");
+                FileInputStream input = new FileInputStream("src/Exercises/Streams/newfile.txt");
                 while(true){
                     int data = input.read();
                     if(data == -1) {
                         System.out.println("End of Stream");
                         break;
-                    }else{
+                    }
+                    else{
                         System.out.write(data);
                     }
                     System.out.flush();
