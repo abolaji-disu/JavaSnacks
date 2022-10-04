@@ -18,9 +18,6 @@ public class GameTime {
     public boolean decideWinner(){
     return player.checkWinner();
     }
-//    public boolean isATie(){
-//        return player.checkTie();
-//    }
 
     public void playGame(int play){
         player.checkPlayerTurns(play);
