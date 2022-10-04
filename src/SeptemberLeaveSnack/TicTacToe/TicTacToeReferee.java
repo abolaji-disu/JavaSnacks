@@ -75,7 +75,7 @@ public class TicTacToeReferee {
         boolean isWinner = !(row && col && diagonal);
 
         if (isWinner && !checkEmptyCell()){
-            System.out.println("Game is a tie");
+            System.out.println("Game is a tie !, Keep the tough on!!");
             return true;
         }
         return false;
