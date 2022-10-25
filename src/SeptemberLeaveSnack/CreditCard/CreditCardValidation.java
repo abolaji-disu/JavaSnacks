@@ -1,4 +1,4 @@
-package SeptemberLeaveSnack;
+package SeptemberLeaveSnack.CreditCard;
 
 public class CreditCardValidation {
 

@@ -1,6 +1,5 @@
 package SeptemberLeaveSnack.TicTacToe;
 
-
 import SeptemberLeaveSnack.TicTacToe.ErrorModule.IllegalValueException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
